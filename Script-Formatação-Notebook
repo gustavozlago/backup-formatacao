@@ -47,7 +47,6 @@ sudo apt-get install openjdk-11-jre-headless
 sudo apt-get remove rhythmbox*
 sudo apt-get remove xed
 sudo apt-get remove gucharmap
-sudo apt-get remove sticky
 sudo apt-get remove yelp
 sudo apt-get remove kdeconnect
 sudo apt-get remove onboard
