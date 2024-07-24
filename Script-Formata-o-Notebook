@@ -1,0 +1,80 @@
+#!/bin/bash
+
+#Atualizando Sitema#
+
+sudo apt update && sudo apt dist-upgrade -y
+
+#Instalando Programas Repositório#
+
+sudo apt-get install vlc
+sudo apt-get install clementine
+sudo apt-get install soundconverter
+sudo apt-get install brasero
+sudo apt-get install numlockx
+sudo apt-get install cdrdao
+sudo apt-get install spotify-client
+sudo apt-get install audacity
+sudo apt-get install dconf-editor
+sudo apt-get install kdenlive
+sudo apt-get install gparted
+sudo apt-get install obs-studio
+sudo apt-get install paprefs
+sudo apt-get install usb-creator-gtk
+sudo apt-get install shotwell
+sudo apt-get install gedit
+sudo apt-get install gimp
+sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install ttf-mscorefonts-installer
+sudo apt-get install cmatrix
+sudo apt-get install speedtest-cli
+sudo apt-get install aria2
+sudo apt-get install neofetch
+sudo apt-get install youtube-dl
+sudo apt-get install mgba-common
+sudo apt-get install mgba-qt
+sudo apt-get install mgba-sdl
+sudo apt-get install pcsxr
+sudo apt-get install default-jre
+sudo apt-get install default-jre-headless
+sudo apt-get install openjdk-21-jdk-headless
+sudo apt-get install openjdk-21-jre-headless
+sudo apt-get install openjdk-11-jre
+sudo apt-get install openjdk-11-jre-headless
+
+
+#Desinstalando Programas Repositório#
+
+sudo apt-get remove rhythmbox*
+sudo apt-get remove xed
+sudo apt-get remove gucharmap
+sudo apt-get remove sticky
+sudo apt-get remove yelp
+sudo apt-get remove kdeconnect
+sudo apt-get remove onboard
+sudo apt-get remove redshift-gtk
+sudo apt-get remove drawing
+sudo apt-get remove pix
+sudo apt-get remove thingy
+sudo apt-get remove xviewer
+sudo apt-get remove warpinator
+sudo apt-get remove info
+sudo apt-get remove celluloid
+sudo apt-get remove hypnotix
+sudo apt-get remove hexchat
+sudo apt-get remove thunderbird
+sudo apt-get remove seahorse
+
+
+#Atualizando e Limpando Sitema#
+
+sudo apt-get update -y
+sudo apt-get dist-upgrade -y
+sudo apt-get upgrade -y
+sudo apt-get install -f
+sudo apt-get autoremove
+sudo apt-get autoclean
+
+#Finalização Script#
+
+echo -e "${VERDE}[INFO] - Script finalizado, instalação concluída! :)${SEM_COR}"
+
