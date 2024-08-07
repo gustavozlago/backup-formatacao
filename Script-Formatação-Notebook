@@ -20,6 +20,7 @@ sudo apt-get install dconf-editor
 sudo apt-get install kdenlive
 sudo apt-get install gparted
 sudo apt-get install obs-studio
+sudo apt-get install plank
 #sudo apt-get install paprefs
 sudo apt-get install usb-creator-gtk
 sudo apt-get install shotwell
@@ -36,13 +37,14 @@ sudo apt-get install mgba-common
 sudo apt-get install mgba-qt
 sudo apt-get install mgba-sdl
 sudo apt-get install pcsxr
-sudo apt-get install default-jre
-sudo apt-get install default-jre-headless
+#sudo apt-get install default-jre
+#sudo apt-get install default-jre-headless
+#sudo apt-get install openjdk-11-jre
+#sudo apt-get install openjdk-11-jre-headless
 sudo apt-get install openjdk-21-jdk-headless
 sudo apt-get install openjdk-21-jre-headless
-sudo apt-get install openjdk-11-jre
-sudo apt-get install openjdk-11-jre-headless
-
+sudo apt-get install openjdk-21-jdk
+sudo apt-get install openjdk-21-jre
 
 #Desinstalando Programas Repositório#
 
@@ -65,7 +67,6 @@ sudo apt-get remove hypnotix
 sudo apt-get remove hexchat
 sudo apt-get remove thunderbird
 sudo apt-get remove seahorse
-
 
 #Atualizando e Limpando Sitema#
 
