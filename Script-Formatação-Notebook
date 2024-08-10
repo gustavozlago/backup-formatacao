@@ -21,7 +21,7 @@ sudo apt-get install kdenlive
 sudo apt-get install gparted
 sudo apt-get install obs-studio
 sudo apt-get install plank
-#sudo apt-get install paprefs
+sudo apt-get install paprefs
 sudo apt-get install usb-creator-gtk
 sudo apt-get install shotwell
 sudo apt-get install gedit
@@ -37,6 +37,7 @@ sudo apt-get install mgba-common
 sudo apt-get install mgba-qt
 sudo apt-get install mgba-sdl
 sudo apt-get install pcsxr
+sudo apt-get install scrcpy
 #sudo apt-get install default-jre
 #sudo apt-get install default-jre-headless
 #sudo apt-get install openjdk-11-jre
@@ -80,4 +81,5 @@ sudo apt-get autoclean
 #Finalização Script#
 
 echo -e "${VERDE}[INFO] - Script finalizado, instalação concluída! :)${SEM_COR}"
+
 
