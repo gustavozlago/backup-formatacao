@@ -69,20 +69,26 @@ sudo apt install -y \
   mgba-sdl \
   pcsxr \
   scrcpy \
+  lm-sensors \
   openjdk-21-jdk \
   devede
+  
+  # 5.  comando sensores de temperatura automático
+  
+  sudo sensors-detect --auto
 
-# 5. Baixando e Instalando pacotes .deb externos (Chrome, Edge, Steam, Minecraft, Discord e Spotify)
+# 6. Baixando e Instalando pacotes .deb externos (Chrome, Edge, Steam, Minecraft, Discord e Spotify)
 
 echo -e "${AZUL}[INFO] - Baixando e instalando o Google Chrome (.deb)...${SEM_COR}"
 wget -O /tmp/google-chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo apt install -y /tmp/google-chrome.deb
 rm /tmp/google-chrome.deb
 
-#echo -e "${AZUL}[INFO] - Baixando e instalando o Microsoft Edge (.deb)...${SEM_COR}"
-#wget -O /tmp/microsoft-edge.deb "https://go.microsoft.com/fwlink/p/?LinkID=2157583"
-#sudo apt install -y /tmp/microsoft-edge.deb
-#rm /tmp/microsoft-edge.deb
+echo -e "${AZUL}[INFO] - Configurando repositório e instalando o Microsoft Edge...${SEM_COR}"
+sudo apt update && sudo apt install -y curl gpg
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-edge.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list > /dev/null
+sudo apt update && sudo apt install -y microsoft-edge-stable
 
 echo -e "${AZUL}[INFO] - Baixando e instalando a Steam (.deb)...${SEM_COR}"
 wget -O /tmp/steam.deb "https://cdn.akamai.steamstatic.com/client/installer/steam.deb"
@@ -104,7 +110,30 @@ wget -O /tmp/spotify.deb "http://repository.spotify.com/pool/non-free/s/spotify-
 sudo apt install -y /tmp/spotify.deb
 rm /tmp/spotify.deb
 
-# 6. Atualização completa, limpeza final e correção de dependências
+#7. Instalação Flatpaks
+
+echo -e "${AZUL}[INFO] - Configurando Flatpak e instalando aplicativos...${SEM_COR}"
+
+# 1. Instala o suporte a Flatpak no Debian (e o plugin para a loja, se desejar)
+sudo apt update && sudo apt install -y flatpak
+
+# 2. Adiciona o repositório oficial do Flathub
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# 3. Lista de aplicativos Flatpak (adicione ou comente com # os IDs desejados)
+FLATPAKS=(
+    "org.jdownloader.JDownloader"
+    "org.soundconverter.SoundConverter"
+    
+)
+
+# 4. Instala cada aplicativo da lista automaticamente
+for app in "${FLATPAKS[@]}"; do
+    echo -e "${AZUL}[INFO] - Instalando Flatpak: $app...${SEM_COR}"
+    sudo flatpak install -y flathub "$app"
+done
+
+# 8. Atualização completa, limpeza final e correção de dependências
 echo -e "${AZUL}[INFO] - Executando atualização de pacotes e limpeza final do sistema...${SEM_COR}"
 sudo apt update
 sudo apt dist-upgrade -y
@@ -112,5 +141,5 @@ sudo apt install -f -y
 sudo apt autoremove --purge -y
 sudo apt autoclean -y
 
-# 7. Finalização
+# 9. Finalização
 echo -e "${VERDE}[INFO] - Script finalizado, instalação concluída com sucesso! :)${SEM_COR}"
