@@ -5,7 +5,10 @@
 # Utilitários Visuais & Diversão
 alias Hakai='clear'
 alias Matrix='cmatrix'
-alias Sensores='sensors'
+
+# Monitoramento de Temperatura em Tempo Real
+alias Sensores='watch -n 1 sensors'
+alias sensores='watch -n 1 sensors'
 
 # Informações do Sistema
 # Dica: 'fastfetch' é o substituto moderno do neofetch
